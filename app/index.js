@@ -1,7 +1,8 @@
-import { View, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Logo from '../components/Logo';
 import { Main } from '../components/Main';
 import { StatusBar } from 'expo-status-bar';
+import { Link } from 'expo-router';
 
 
 export default function Index(){
@@ -9,8 +10,13 @@ export default function Index(){
     <View style={styles.container}>
         <StatusBar style='light'/>  
         <Logo style={styles.logo} />
-            <Main/>
-        </View>
+        <Link href="/about" asChild>
+            <TouchableOpacity >
+                <Text > Acerca de </Text>
+            </TouchableOpacity>
+        </Link>
+        <Main/>
+    </View>
     );
 }
 
